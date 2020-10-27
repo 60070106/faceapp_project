@@ -8,7 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1hJIqRWpGdJS2FOjTANpHurXzjF" />
@@ -86,10 +86,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="101" y="201" width="1720" height="639" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600240971703" />
-    <state x="778" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1602487042050">
+    <state x="778" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1603791532396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="778" y="383" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602487042050" />
+    <state x="778" y="383" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603791532396" />
     <state x="914" y="481" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602488702869">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
