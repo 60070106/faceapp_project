@@ -16,7 +16,7 @@ Future<String> createPicture(String imagePath) async {
 
   http.post("http://10.0.2.2:8000/api/postpicture",
   body: {
-    "name": 'สุภวัช',
+    "name": 'น้องเมฆ',
     "surname": 'กลิ่นขจร',
     "fileName": fileName,
     "img": base64Image,
