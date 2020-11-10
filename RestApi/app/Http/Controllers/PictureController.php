@@ -51,18 +51,34 @@ class PictureController extends Controller
         $picture->fileName = $fileName;
         $picture->img = $image;
 
-        // $data = 'data:image/png;base64,'.$image;
-        // $source = fopen($data, 'r');
-        // $destination = fopen('image/'.time().'.jpeg' , 'w');
+        date_default_timezone_set("Asia/Bangkok");
 
-        $output = exec('py C:\xampp\htdocs\RestApi\resources\py\facial_processer.py "'.$name.'" "'.$surname.'"');
-        $str = iconv('TIS-620','UTF-8', $output);
-        $picture->pytest = $str;
+        $data = 'data:image/png;base64,'.$image;
+        $source = fopen($data, 'r');
+        $savedFileCheck = 'image/checkimg/'.$name.'_'.$surname.'_'.date("Y-m-d").'_'.date("h-i-sa").'.jpeg';
+        $destination = fopen($savedFileCheck , 'w');
+        stream_copy_to_stream($source, $destination);
+        fclose($source);
+        fclose($destination);
 
-        // stream_copy_to_stream($source, $destination);
-        // fclose($source);
-        // fclose($destination);
+        if(Registered_face::where('name', $name)->where('surname', $surname)->first() != null) {
+            $querryDB = Registered_face::where('name', $name)->where('surname', $surname)->first();
+            $dataDB = 'data:image/png;base64,'.$querryDB->img;
+            $sourceDB = fopen($dataDB, 'r');
+            $savedFileDB = 'image/querry_fromDB/'.$name.'_'.$surname.'_'.date("Y-m-d").'_'.date("h-i-sa").'.jpeg';
+            $destinationDB = fopen($savedFileDB , 'w');
+            stream_copy_to_stream($sourceDB, $destinationDB);
+            fclose($sourceDB);
+            fclose($destinationDB);
 
+            $output = exec('py C:\xampp\htdocs\RestApi\resources\py\facial_processer.py "'.$savedFileCheck.'" "'.$savedFileDB.'"');
+            $str = iconv('TIS-620','UTF-8', $output);
+            $picture->pytest = $str;
+        }
+        else {
+            $picture->pytest = "not found db picture";
+        }
+        
 
         $picture->save();
 
