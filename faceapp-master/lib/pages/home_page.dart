@@ -3,14 +3,12 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/take_picture_page.dart';
 
-
-class HomePage extends StatefulWidget {
+class FaceRegis extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _FaceRegisState createState() => _FaceRegisState();
 }
 
-class _HomePageState extends State<HomePage> {
-
+class _FaceRegisState extends State<FaceRegis> {
   void _showCamera() async {
     final cameras = await availableCameras();
     final frontCamera = cameras[1];
@@ -18,10 +16,9 @@ class _HomePageState extends State<HomePage> {
     Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => TakePicturePage(camera: frontCamera)));
+            builder: (context) => TakePicturePage(camera: frontCamera)));
 
-    setState(() {
-    });
+    setState(() {});
   }
 
   @override

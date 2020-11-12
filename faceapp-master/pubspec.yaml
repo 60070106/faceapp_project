@@ -29,7 +29,7 @@ dependencies:
   http: "^0.12.2"
   http_parser: "^3.1.4"
   image:
-
+  simple_animations: ^2.2.3
     
 
 
