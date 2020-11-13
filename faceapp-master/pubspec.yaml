@@ -30,7 +30,7 @@ dependencies:
   http_parser: "^3.1.4"
   image:
   simple_animations: ^2.2.3
-    
+  shared_preferences: ">=0.5.7+3 <2.0.0"  
 
 
   # The following adds the Cupertino Icons font to your application.
